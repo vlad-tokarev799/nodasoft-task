@@ -1,0 +1,198 @@
+body {
+	margin: 0;
+	padding: 0;
+
+	background: #fff;
+
+	font-family: 'Roboto', sans-serif;
+}
+
+.wrapper { 
+	width: 1200px;
+		max-width: 100%;
+	height: 1000px;
+
+	margin: 0 auto;
+	padding: 0 15px;
+
+	box-sizing: border-box;
+
+	background: #C0DBD9;
+
+	position: relative;
+}
+
+
+
+.header {
+	background: #7faff6;
+
+	padding: 30.5px 30px;
+}
+
+.header__btn {
+	font-size: 20px;
+	line-height: 23px;
+	text-decoration: none;
+
+	color: #FFFFFF;
+	background: #A5C7F9;
+
+	padding: 8px 15px;
+	border-radius: 5px;
+
+	display: inline-block;
+}
+
+
+
+.grid {
+	/* Создаем счетчик */
+	counter-reset: item 0;
+
+	margin-top: 15px;
+
+	display: grid;
+		grid-template-columns: 390px 1fr 160px;
+		grid-gap: 15px;
+
+	background: #B3F95A;
+}
+
+.grid .grid__item:before {
+	/* Увеличиваем счетчик */
+	counter-increment: item;
+
+	/* Выводим значение счетичка */
+    content: counter(item);
+}
+
+.grid__item {
+	display: flex;
+		justify-content: center;
+		align-items: center;
+
+	height: 198px;
+
+	font-size: 53px;
+	line-height: 62px;
+
+	color: #FFFFFF;
+	background: #8AD191;
+}
+
+.grid__item:nth-child(4) {
+	grid-column: 1 / 3;
+}
+
+
+
+.items {
+	background: #88B5BF;
+	
+	padding: 30px;
+	margin-top: 15px;
+	
+	display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 30px;
+}
+
+.item {
+	/* Сохраняем пропорции айтема */
+	aspect-ratio: 255 / 199; 
+
+	background: #0D89B0;
+}
+
+
+
+.footer {
+	height: 100px;
+
+	background: #7FAFF7;
+
+	position: absolute;
+		bottom: 0;
+		left: 15px;
+		right: 15px;
+}
+
+
+
+.popup {
+	position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 3;
+
+	/* Скрываем попап */
+	opacity: 0; 
+
+	display: flex;
+		justify-content: center;
+		align-items: center;
+
+	/* Делаем его неактивным для событий мыши */
+	pointer-events: none;
+
+	transition: 0.3s ease-in-out;
+}
+
+/* Если в URL прописана ссылка на нужное окно как якорь */
+.popup:target {
+	/* Показываем его */
+	opacity:1;
+
+	/* Делаем активным для мыши */
+	pointer-events: auto;
+}
+
+.popup__overlay {
+	background: rgba(0,0,0,0.4);
+
+	position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+}
+
+.popup__content {
+	width: 400px;
+	height: 400px;
+	
+	background: #fff;
+
+	position: relative;
+
+	display: flex;
+		justify-content: center;
+		align-items: center;
+}
+
+.popup__close {
+	padding: 8px 15px;
+	border-radius: 5px;
+
+	background: #7FAFF6;
+	color: #FFFFFF;
+
+	position: absolute;
+		top: 15px;
+		right: 15px;
+
+	font-size: 20px;
+	line-height: 23px;
+	text-decoration: none;
+}
+
+.popup__text {
+	font-size: 53px;
+	line-height: 62px;
+
+	margin: 0;
+}
+
